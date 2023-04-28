@@ -8,6 +8,7 @@
 #    Otherwise, displays the number
 #    In a list format
 
+
 n=1
 
 while [ $n -le 100 ]
