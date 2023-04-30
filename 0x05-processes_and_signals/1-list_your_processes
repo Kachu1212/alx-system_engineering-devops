@@ -3,4 +3,4 @@
 #   It also shows all processes, for all users, including those
 #  which might not have any TTY.
 
-ps -a uf
+ps -auxf
