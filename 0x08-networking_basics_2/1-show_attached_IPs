@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# The script prints all active IPV4 IPS on a machine its executed on
+
+ifconfig -a | grep inet | cut -d: -f2 | cut -d" "  -f1
