@@ -2,16 +2,10 @@
 # Install nginx on web server; Nginx should be listening on port 80
 # Querying Nginx at its root (/) with a GET request (requesting a page)
 
-sudo apt update -y
-sudo apt install nginx -y
-mkdir /etc/nginx/html
-touch /etc/nginx/html/index.html
-echo "Hello World!" > /etc/nginx/html/index.html
-echo "server {
-        listen  80 default_server;
-        listen  [::]:80 default_server;
-        root    /etc/nginx/html;
-        index   index.html index.htm;
-}" > /etc/nginx/sites-available/default
-
+sudo apt-get update -y
+sudo apt-get install nginx -y
+sudo ufw 'Nginx HTTP'
+touch /var/www/html/index.html
+echo "Hello World!" | sudo tee /var/www/html/index.html
+sudo nginx -t
 sudo service nginx reload
