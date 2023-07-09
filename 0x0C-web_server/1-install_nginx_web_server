@@ -8,4 +8,3 @@ touch /var/www/html/index.html
 echo "Hello World!" | sudo tee /var/www/html/index.html
 sudo nginx -t
 sudo service nginx reload
-curl 127.0.0.1
