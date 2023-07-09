@@ -23,11 +23,13 @@ frontend www-http
                 default_backend servers
 
 frontend www-https
-                 bind *:443 ssl crt /etc/letsencrypt/live/www.kachu.tech/fullchain.pem
-                 default_backend www-backend
+                bind *:443 ssl crt /etc/letsencrypt/live/www.kachu.tech/fullchain.pem
+                http-request set-header X-Forwarded-Proto https
+                default_backend www-backend
 
 backend servers
                 balance roundrobin
-                server  web-01 3.85.54.88:80 check
-                server  web-02 54.237.125.19:80 check
+                redirect scheme https if !{ssl_fc}
+                server 187813-web-01 3.85.54.88:80 check
+                server 187813-web-02 54.237.125.19:80 check
 ~                                                          
