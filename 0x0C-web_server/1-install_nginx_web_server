@@ -2,20 +2,25 @@
 #Install nginx  on web server;Nginx should be listening on port 80
 
 # Update the package list
-sudo apt update
-
-# Install Nginx
-sudo apt install -y nginx
-
-# Configure Nginx to listen on port 80
-sudo sed -i 's/listen\s*80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
-
-# Restart Nginx
-sudo service nginx restart
+sudo apt-get update -y
+sudo apt-get install nginx -y
 
 # Create a default HTML file with "Hello World!" content
-sudo bash -c 'echo "<html><body>Hello World!</body></html>" > /var/www/html/index.html'
+touch /var/www/html/index.html
+sudo sh -c 'echo "Hello World!" > /var/www/html/index.html'
 
 # Make sure the HTML file is readable by Nginx
 sudo chmod 644 /var/www/html/index.html
 sudo chown www-data:www-data /var/www/html/index.html
+
+echo "Hello World!" > /etc/nginx/html/index.html
+
+echo "server {
+        listen  80;
+        listen  [::]:80 default_server;
+        root    /etc/nginx/html;
+        index   index.html index.htm;
+}" > /etc/nginx/sites-available/default
+
+sudo nginx -t
+sudo service nginx reload
