@@ -3,7 +3,7 @@
 
 sudo apt-get update -y
 sudo apt-get install nginx -y
-touch /var/www/html/index.html
+
 echo "Hello World!" > /etc/nginx/html/index.html
 
 echo "server {
@@ -13,13 +13,13 @@ echo "server {
         index   index.html index.htm;
 }" > /etc/nginx/sites-available/default
 
-
-sudo nginx -t
-sudo service nginx reload
-
 # Create a default HTML file with "Hello World!" content
-sudo bash -c 'echo "<html><body>Hello World!</body></html>" > /var/www/html/index.html'
+touch /var/www/html/index.html
+sudo sh -c 'echo "Hello World!" > /var/www/html/index.html'
 
 # Make sure the HTML file is readable by Nginx
 sudo chmod 644 /var/www/html/index.html
 sudo chown www-data:www-data /var/www/html/index.html
+
+sudo nginx -t
+sudo service nginx reload
