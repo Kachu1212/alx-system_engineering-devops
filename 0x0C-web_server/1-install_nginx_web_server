@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #Instalation and configuration of Nginx Server
 
 # Update the package list
