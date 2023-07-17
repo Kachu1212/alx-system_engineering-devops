@@ -1,5 +1,5 @@
 #!/bin/bash
-# Instalation and configuration of Nginx Server
+#Instalation and configuration of Nginx Server
 
 # Update the package list
 sudo apt update
