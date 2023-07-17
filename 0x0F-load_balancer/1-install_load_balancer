@@ -35,4 +35,12 @@ backend servers
 		server	187813-web-01 3.85.54.88:80 check
 		server	187813-web-02 54.237.125.19:80 check" | sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null
 
+echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
+
+# enable haproxy to be started by init script
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
+# Testing the HAproxy configuration file
+sudo haproxy -c -f /etc/haproxy/haproxy.cfg
+
 sudo service haproxy restart
