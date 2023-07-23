@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+# Install ufw firewall on the server and set up a few rules
+
+sudo apt-get -y update
+sudo apt-get -y install ufw
 
 # Check the status of ufw to make sure it is active by running:
 
