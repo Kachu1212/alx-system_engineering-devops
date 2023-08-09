@@ -3,7 +3,7 @@
 Query Reddit API to find top 10 hot posts of a given subreddit
 """
 import requests
-after = none
+after = None
 
 def recurse(subreddit, hot_list=[]):
     """returning top ten post titles recursively"""
