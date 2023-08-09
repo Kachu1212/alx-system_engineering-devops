@@ -11,9 +11,9 @@ def count_words(subreddit, word_list, after='', word_dict={}):
     (case-insensitive, delimited by spaces.
     Javascript should count as javascript, but java should not).
     If no posts match or the subreddit is invalid, it prints nothing.
-    """
+    
 
-Args:
+    Args:
         subreddit (str): The subreddit to search.
         word_list (list): The list of words to search for in post titles.
         instances (obj): Key/value pairs of words/counts.
