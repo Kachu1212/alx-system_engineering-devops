@@ -4,6 +4,7 @@ Function that queries the Reddit API and prints
 the top ten hot posts of a subreddit
 """
 import requests
+import json
 
 def count_words(subreddit, word_list, after='', word_dict={}):
     """ A function that queries the Reddit API parses the title of
