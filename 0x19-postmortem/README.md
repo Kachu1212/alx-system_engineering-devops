@@ -1,6 +1,6 @@
 # Postmortem
 
-Upon the release of ALX School's System Engineering & DevOps project 0x19,
+Upon the release of ALX System Engineering & DevOps project 0x19,
 approximately 06:04 West African Time (WAT), an outage occurred on an isolated
 Ubuntu 14.04 container running an Apache web server. GET requests on the server led to
 `500 Internal Server Error`'s, when the expected response was an HTML file defining a
@@ -56,7 +56,7 @@ and could have been addressed earlier had the app been tested.
 [UptimeRobot](./https://uptimerobot.com/) to alert instantly upon outage of the website.
 
 Note that in response to this error, I wrote a Puppet manifest
-[0-strace_is_your_friend.pp](https://github.com/bdbaraban/holberton-system_engineering-devops/blob/master/0x17-web_stack_debugging_3/0-strace_is_your_friend.pp)
+[0-strace_is_your_friend.pp](https://github.com/Kachu1212/alx-system_engineering-devops/blob/master/0x17-web_stack_debugging_3/0-strace_is_your_friend.pp)
 to automate fixing of any such identitical errors should they occur in the future. The manifest
 replaces any `phpp` extensions in the file `/var/www/html/wp-settings.php` with `php`.
 
